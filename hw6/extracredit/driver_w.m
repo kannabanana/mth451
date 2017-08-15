@@ -3,10 +3,10 @@ function v = driver(A)
 	v = []
 %	T = tridiag(A)
 	T = hess(A)
-
-	for i=1:3
+	[m,m] = size(T)
+	for i=1:m-1
 		[m,n] = size(T)
-		T = qralg(T)
+		T = wilkinson(T)
 		disp(T)
 		v1 = T(m,m)
 		disp(v1)
