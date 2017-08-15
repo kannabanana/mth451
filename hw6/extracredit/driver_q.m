@@ -1,8 +1,7 @@
 function [v,v_ultimate] = driver(A)
 %call part 2 on loop - three times
 	v = []			%store eigenvalues
-%	T = tridiag(A)
-	T = hess(A)
+	T = tridiag(A)
 	[m,n] = size(A)		
 	v_ultimate = []		%store m values
 

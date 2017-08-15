@@ -1,4 +1,5 @@
-function newA  = wilkinson(A)
+function [newA,MVALUES]  = wilkinson(A)
+	MVALUES =[]
 	[J,I] = size(A)
 	m = A(J,J-1)
 	u = A(J,J)
@@ -9,5 +10,6 @@ function newA  = wilkinson(A)
 		newA = (R*Q)+(u*eye(J))
 		u = newA(J,J)
 		m = newA(J,J-1)
+		MVALUES = [MVALUES abs(m)]
 	end
 end
